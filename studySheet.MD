@@ -567,3 +567,15 @@ or
 
 $ LD_LIBRARY_PATH=$HOME/foo/lib foo [args]
 
+## How git Works
+______
+Technically, git is not a source control management system in the usual sense, and the basic units it works with are not files. It has two important data structures: an object database and a directory cache.
+
+The object database contains objects of three varieties:
+
+Blobs: Chunks of binary data containing file contents
+Trees: Sets of blobs including file names and attributes, giving the directory structure
+Commits: Changesets describing tree snapshots.
+The directory cache captures the state of the directory tree.
+
+By liberating the controls system from a file-by-file-based system, one is better able to handle changesets which involve many files.
